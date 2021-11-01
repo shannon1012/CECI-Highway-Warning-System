@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div>
+        <form name="roadnumber" id="roadnumber">
+            <input type="text" id="roadnum" name="roadnum" placeholder="選擇國道" />
+            <input type="button" name="submit" value="查詢" onclick="roadaccident();" />
+        </form>
+    </div>
+    <div id="accidents"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        function roadaccident() {
+            var roadnum = document.getElementById("roadnum");
+            var url = "http://127.0.0.1:5000/ioi?Num=" + roadnum.value;
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                mode: 'no-cors',
+                success: function(data) {
+                    var comment = [],
+                        happentime = []
+                    for (i = 0; i < data.content.length; i++) {
+                        comment.push(data.content[i]['comment']);
+                    }
+                    for (i = 0; i < data.content.length; i++) {
+                        happentime.push(data.content[i]['happentime']);
+                    }
+                    let table = document.createElement('table');
+                    let thead = document.createElement('thead');
+                    let tbody = document.createElement('tbody');
+
+                    table.appendChild(thead);
+                    table.appendChild(tbody);
+                    document.getElementById('accidents').appendChild(table);
+
+                    let row_1 = document.createElement('tr');
+                    let heading_1 = document.createElement('th');
+                    heading_1.innerHTML = "時間";
+                    let heading_2 = document.createElement('th');
+                    heading_2.innerHTML = "事故類型";
+                    let heading_3 = document.createElement('th');
+                    heading_3.innerHTML = "備註";
+
+                    row_1.appendChild(heading_1);
+                    row_1.appendChild(heading_2);
+                    row_1.appendChild(heading_3);
+                    thead.appendChild(row_1);
+
+                    for (i = 0; i < data.content.length; i++) {
+                        let row_2 = document.createElement('tr');
+                        let row_2_data_1 = document.createElement('td');
+                        row_2_data_1.innerHTML = data.content[i]['happentime'];
+                        let row_2_data_2 = document.createElement('td');
+                        row_2_data_2.innerHTML = data.content[i]['roadtype'];
+                        let row_2_data_3 = document.createElement('td');
+                        row_2_data_3.innerHTML = data.content[i]['comment'];
+
+                        row_2.appendChild(row_2_data_1);
+                        row_2.appendChild(row_2_data_2);
+                        row_2.appendChild(row_2_data_3);
+                        tbody.appendChild(row_2);
+                    }
+
+
+                }
+            })
+
+
+        }
+    </script>
+
+</body>
+
+</html>

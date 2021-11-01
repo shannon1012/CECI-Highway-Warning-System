@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>高速公路預警系統</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="icon" type="image/png" sizes="32x32" href="style/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="style/images/favicon.ico">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta property='og:title' content='國道地圖' />
+    <meta property='og:description' content='國道地圖' />
+    <meta property="og:site_name" content="國道地圖" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/style/images/meta_img.jpg" />
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="style/revolution/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="style/revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="style/revolution/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="style/revolution/revolution-addons/filmstrip/css/revolution.addon.filmstrip.css">
+    <link rel="stylesheet" type="text/css" href="style/revolution/revolution-addons/typewriter/css/typewriter.css">
+    <link rel="stylesheet" type="text/css" href="style/type/icons.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style/css/color/pink.css">
+    <link rel="stylesheet" type="text/css" href="style/css/font/font5.css">
+    <link rel="stylesheet" type="text/css" href="style/js/leaflet/leaflet.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i,800,800i%7CVidaloka" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link href="assets/css/theme.css" rel="stylesheet" />
+
+
+</head>
+
+
+<body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="index.html"> <img class="me-3" src="assets/img/gallery/logo.png" alt="" /></a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
+                        <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#accident">事故熱區</a></li>
+                        <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#road">即時路況</a></li>
+                        <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#testimonial">即時訊息</a></li>
+                    </ul>
+                    <a class="text-decoration-none" href="#!">
+                        <svg class="bi bi-facebook text-facebook" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+      <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+    </svg></a>
+                </div>
+            </div>
+        </nav>
+        <section class="py-0" id="home">
+
+            <div class="container">
+                <div class="row align-items-center min-vh-md-75 mt-7">
+                    <div id="map" style="height: 600px; width: 100%; border-style: solid;"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- end of .container-->
+
+
+
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+        <section id="accident">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 mx-auto text-center mb-4">
+                        <h5 class="fw-light fs-3 fs-lg-5 lh-sm mb-3">事故熱區</h5>
+                        <p class="mb-5">建立模型預測事故發生熱區</p>
+                    </div>
+                </div>
+                <div class="row flex-center h-100">
+                    <div class="col-xl-9">
+                        <div class="row justify-content-center">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-4">
+                                    <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/career.png" height="60" alt="services" />
+                                        <div class="card-body">
+                                            <h6 class="fw-light fs-1 heading-color">更新頻率：每1分鐘</h6>
+                                            <button class="btn btn-outline-primary" onclick="">立即更新</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-4">
+                                    <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/admission.png" height="60" alt="services" />
+                                        <div class="card-body">
+                                            <h6 class="fw-light fs-1 heading-color">事故熱點路段</h6>
+                                            <button class="btn btn-outline-danger" onclick="">點擊查看</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100 shadow px-4 px-md-2 px-lg-3 card-span pt-4">
+                                    <div class="text-center text-md-start card-hover"><img class="ps-3 icons" src="assets/img/icons/visa.png" height="60" alt="services" />
+                                        <div class="card-body">
+                                            <h6 class="fw-light fs-1 heading-color">交通分析</h6>
+                                            <button class="btn btn-outline-success" onclick="">點擊查看</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <!-- end of .container-->
+
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+        <section class="bg-100">
+            <div class="container">
+                <div class="row" id="road">
+                    <div class="col-lg-7 mx-auto text-center my-5">
+                        <h5 class="fw-light fs-3 fs-lg-5 lh-sm mb-4">即時路況</h5>
+                        <p class="mb-3">提供路線快速查詢與詳細資訊監測</p>
+                    </div>
+                </div>
+                <div class="row flex-center h-100">
+                    <div class="col-xl-9">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 mb-4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>路線快速查詢</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <form class="d-flex" id="roadnumber" name="roadnumber">
+                                                    <input class="form-control me-2" type="text" id="roadnum" name="roadnum" placeholder="選擇國道" />
+                                                    <input class="btn btn-primary" type="button" name="submit" value="查詢" onclick="roadaccident();" />
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <form class="d-flex">
+                                                    <input class="form-control me-2" type="search" placeholder="查看路段">
+                                                    <input class="btn btn-primary" type="button" name="submit" value="查詢" onclick="" />
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <td>詳細資訊監測</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <button onclick="window.open('https://www.cwb.gov.tw/V8/C/')" class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="125" height="16" fill="currentColor" class="bi bi-cloud-drizzle" viewBox="0 0 16 16">
+                                                <path d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973zM8.5 2a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 2z"/>
+                                              </svg><a href="https://www.cwb.gov.tw/V8/C/" target="_blank"></a></button>
+
+                                                <button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="125" height="16" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                              </svg></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="125" height="16" fill="currentColor" class="bi bi-shield" viewBox="0 0 16 16">
+                                                <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z"/>
+                                              </svg></button>
+
+                                                <button class="btn btn-primary" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="125" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                                              </svg></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table" id="accidents" style="background-color:rgba(25, 25, 25, 0.10)"></div>
+                </div>
+            </div>
+            <!-- end of .container-->
+
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+
+
+
+
+
+
+
+        <!-- ============================================-->
+        <!-- <section> begin ============================-->
+        <section class="bg-primary">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-auto">
+                        <a href="https://www.ceci.org.tw/" target="_blank"><img src="#" srcset="style/images/logo-office.png 1x, style/images/logo-office.png 2x" alt="" /></a>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a class="text-lg-100 fw-light" href="#!">關於我們</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a class="text-lg-100 fw-light" href="#!">企劃書</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a class="text-lg-100 fw-light" href="#!">參考資料</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-auto mb-3">
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a class="text-lg-100 fw-light" href="#!">聯絡我們</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end of .container-->
+        </section>
+        <!-- <section> close ============================-->
+        <!-- ============================================-->
+
+
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/@popperjs/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="style/js/map.js"></script>
+    <script src="style/js/jquery.min.js"></script>
+    <script src="style/js/popper.min.js"></script>
+    <script src="style/js/bootstrap.min.js"></script>
+    <script src="style/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="style/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="style/revolution/revolution-addons/filmstrip/js/revolution.addon.filmstrip.min.js"></script>
+    <script src="style/revolution/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js"></script>
+    <script src="style/js/plugins.js"></script>
+    <script src="style/js/scripts.js"></script>
+    <script src="style/js/leaflet/leaflet.js"></script>
+    <script src="style/js/map/Freeway.json"></script>
+    <script src="style/js/map/points.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var map = L.map('map').setView([25.021749, 121.541591], 10);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.geoJSON(FreewayJson, {
+                color: "#9999FF"
+            }).addTo(map);
+
+            L.geoJSON(points, {
+                pointToLayer: function(feature, latlng) {
+                    roadcode = feature.properties.ROADCODE;
+                    icon = 'HW' + roadcode + '.png';
+                    return new L.Marker(latlng, {
+                        'icon': new L.Icon({
+                            iconUrl: 'style/images/freeway-icon/' + icon,
+                            iconSize: [25, 25]
+                        })
+                    })
+                }
+            }).addTo(map);
+        });
+    </script>
+    <script>
+        function roadaccident() {
+            var roadnum = document.getElementById("roadnum");
+            var url = "http://127.0.0.1:5000/ioi?Num=" + roadnum.value;
+
+            $.ajax({
+                url: url,
+                type: "GET",
+                mode: 'no-cors',
+                success: function(data) {
+                    var comment = [],
+                        happentime = []
+                    for (i = 0; i < data.content.length; i++) {
+                        comment.push(data.content[i]['comment']);
+                    }
+                    for (i = 0; i < data.content.length; i++) {
+                        happentime.push(data.content[i]['happentime']);
+                    }
+                    let table = document.createElement('table');
+                    let thead = document.createElement('thead');
+                    let tbody = document.createElement('tbody');
+
+                    table.appendChild(thead);
+                    table.appendChild(tbody);
+                    document.getElementById('accidents').appendChild(table);
+
+                    let row_1 = document.createElement('tr');
+                    let heading_1 = document.createElement('th');
+                    heading_1.innerHTML = "時間";
+                    let heading_2 = document.createElement('th');
+                    heading_2.innerHTML = "事故類型";
+                    let heading_3 = document.createElement('th');
+                    heading_3.innerHTML = "備註";
+
+                    row_1.appendChild(heading_1);
+                    row_1.appendChild(heading_2);
+                    row_1.appendChild(heading_3);
+                    thead.appendChild(row_1);
+
+                    for (i = 0; i < data.content.length; i++) {
+                        let row_2 = document.createElement('tr');
+                        let row_2_data_1 = document.createElement('td');
+                        row_2_data_1.innerHTML = data.content[i]['happentime'];
+                        let row_2_data_2 = document.createElement('td');
+                        row_2_data_2.innerHTML = data.content[i]['roadtype'];
+                        let row_2_data_3 = document.createElement('td');
+                        row_2_data_3.innerHTML = data.content[i]['comment'];
+
+                        row_2.appendChild(row_2_data_1);
+                        row_2.appendChild(row_2_data_2);
+                        row_2.appendChild(row_2_data_3);
+                        tbody.appendChild(row_2);
+                    }
+
+
+                }
+            })
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+</body>
+
+</html>
