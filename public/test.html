@@ -9,6 +9,9 @@
         </form>
     </div>
     <div id="accidents"></div>
+    <div id="predict">
+
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -22,14 +25,6 @@
                 type: "GET",
                 mode: 'no-cors',
                 success: function(data) {
-                    var comment = [],
-                        happentime = []
-                    for (i = 0; i < data.content.length; i++) {
-                        comment.push(data.content[i]['comment']);
-                    }
-                    for (i = 0; i < data.content.length; i++) {
-                        happentime.push(data.content[i]['happentime']);
-                    }
                     let table = document.createElement('table');
                     let thead = document.createElement('thead');
                     let tbody = document.createElement('tbody');
@@ -72,6 +67,38 @@
 
 
         }
+    </script>
+    <script>
+        $.ajax({
+            url: "http://35.74.237.16/ceci_api/pre/",
+            type: "GET",
+            mode: 'no-cors',
+            success: function(data) {
+                let table = document.createElement('table');
+                let thead = document.createElement('thead');
+                let tbody = document.createElement('tbody');
+
+                table.appendChild(thead);
+                table.appendChild(tbody);
+                document.getElementById('predict').appendChild(table);
+
+                let row_1 = document.createElement('tr');
+                let heading_1 = document.createElement('th');
+                heading_1.innerHTML = "偵測器ID";
+
+                row_1.appendChild(heading_1);
+                thead.appendChild(row_1);
+
+                for (i = 0; i < 3; i++) {
+                    let row_2 = document.createElement('tr');
+                    let row_2_data_1 = document.createElement('td');
+                    row_2_data_1.innerHTML = data.content[i]['ID'];
+
+                    row_2.appendChild(row_2_data_1);
+                    tbody.appendChild(row_2);
+                }
+            }
+        })
     </script>
 
 </body>
