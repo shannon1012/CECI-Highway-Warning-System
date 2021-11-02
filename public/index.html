@@ -61,7 +61,7 @@
     <main class="main" id="top">
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
             <div class="container">
-                <a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="index.html"> <img class="me-3" src="/Users/nnfuzzy/Desktop/ceci_final_project/ceci_final_project/public/style/images/logo-navbar.png" alt="" /></a>
+                <a class="navbar-brand d-flex align-items-center fw-semi-bold fs-3" href="index.html"> <img class="me-3" src="style/images/logo-navbar.png" alt="" /></a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto pt-2 pt-lg-0 font-base">
@@ -80,22 +80,22 @@
         <section class="py-0" id="home">
 
             <div class="container" style="display: flex;">
-                <div class="row min-vh-md-75 mt-7" style="height: 600px; width: 120%;">
+                <div class="row min-vh-md-75 mt-8" style="height: 600px; width: 120%;">
                     <div id="map" class="rounded-2" style="border-style: solid; float: left;"></div>
                 </div>
-                <div class="mt-7 card px-lg-3 card-span" style="height: 600px; width: 35%; margin:35px ; background-color:rgba(28, 55, 79, 1);">
-                    <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">更新頻率：每1分鐘<button class=" btn btn-sm btn-light fs-0 mt-2" style="color:rgba(28, 55, 79, 1) " onclick=" "><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-counterclockwise mx-1" viewBox="0 0 14 14">
+                <div class="mt-8 card px-lg-3 card-span" style="height: 740px; width: 35%; margin:35px ; background-color:rgba(28, 55, 79, 1);">
+                    <h6 class="mt-1 fs-1 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">更新頻率：每1分鐘<br><button class=" btn btn-sm btn-light fs-1 mt-2" style="color:rgba(28, 55, 79, 1) " onclick=" "><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-counterclockwise mx-1" viewBox="0 0 14 14">
                       <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
                       <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
                     </svg><small>立即更新</small></button></h6>
 
-                    <div class="mt-3 card card-span" style="height: 30%; background-color: rgba(28, 55, 79, 1)">
-                        <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">事故熱點<button class=" btn btn-sm btn-outline-light fs-0 ml-lg-5" style="color:rgba(28, 55, 79, 1) " onclick=" "><small>完整資訊</small></button></h6>
-                        <div class="table-striped small text-light" id="predict"></div>
+                    <div class="mt-3 card card-span" style="height: 35%; background-color: rgba(28, 55, 79, 1)">
+                        <h6 class="mt-1 fs-1 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">事故熱點<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1) " onclick=" "><small>完整資訊</small></button></h6>
+                        <div class="table-striped fs-0 text-light" id="predict"></div>
                     </div>
-                    <div class="mt-3 card card-span" style="height: 40%; background-color: rgba(28, 55, 79, 1)">
-                        <h6 class=" mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">交通分析<button class=" btn btn-sm btn-outline-light fs-0 ml-lg-5" style="color:rgba(28, 55, 79, 1);" onclick=" "><small>完整資訊</small></button></h6>
-                        <p>這邊可以寫一些簡單的介紹</p>
+                    <div class="mt-3 card card-span" style="height: 50%; background-color: rgba(28, 55, 79, 1)">
+                        <h6 class=" mt-1 fs-1 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">交通分析<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1);" onclick=" "><small>完整資訊</small></button></h6>
+                        <div class="my-5" id="bar-chart"></div>
                     </div>
                 </div>
             </div>
@@ -107,19 +107,19 @@
 
         <!-- ============================================-->
         <!-- <section> begin ============================-->
-        <section style="background-color: rgba(93, 188, 242, 1);">
-            <div class=" container ">
-                <div class="row " id="road ">
-                    <div class="col-lg-7 mx-auto text-center my-5 ">
-                        <h5 class="fw-light fs-3 fs-lg-5 lh-sm mb-4 ">即時路況</h5>
-                        <p class="mb-3 ">提供路線快速查詢與詳細資訊監測</p>
+        <section style="background-color: rgba(28, 55, 79, 1);">
+            <div class="container">
+                <div class="row" id="road">
+                    <div class="col-lg-7 mx-auto text-center my-5">
+                        <h5 class="fw-light fs-3 fs-lg-5 lh-sm mb-4" style="color: rgb(252, 255, 189)">即時路況</h5>
+                        <p class="mb-3 fs-1" style="color: rgb(252, 255, 189)">提供路線快速查詢與詳細資訊監測</p>
                     </div>
                 </div>
-                <div class="row flex-center h-100 ">
-                    <div class="col-xl-9 ">
-                        <div class="row justify-content-center ">
-                            <div class="col-md-6 mb-4 ">
-                                <table class="table ">
+                <div class="row flex-center h-100">
+                    <div class="col-xl-9">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 mb-4">
+                                <table class="table table-borderless fs-2" style="color: rgb(252, 255, 189); text-align: center;">
                                     <thead>
                                         <tr>
                                             <td>路線快速查詢</td>
@@ -128,25 +128,25 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <form class="d-flex " id="roadnumber " name="roadnumber ">
-                                                    <input class="form-control me-2 " type="text " id="roadnum " name="roadnum " placeholder="選擇國道 " />
-                                                    <input class="btn btn-primary " type="button " name="submit " value="查詢 " onclick="roadaccident(); " />
+                                                <form class="d-flex fs-1" id="roadnumber" name="roadnumber">
+                                                    <input class="form-control me-2" type="text" id="roadnum" name="roadnum" placeholder="選擇國道" />
+                                                    <input class="btn text-dark" style="background-color: rgb(93, 188, 242);" type="button" name="submit" value="查詢" onclick="roadaccident();" />
                                                 </form>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <form class="d-flex ">
-                                                    <input class="form-control me-2 " type="search " placeholder="查看路段 ">
-                                                    <input class="btn btn-primary " type="button " name="submit " value="查詢 " onclick=" " />
+                                                <form class="d-flex fs-1">
+                                                    <input class="form-control me-2" type="search" placeholder="查看路段">
+                                                    <input class="btn text-dark" style="background-color: rgb(93, 188, 242);" type="button" name="submit" value="查詢" onclick="" />
                                                 </form>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <div class="col-md-6 mb-4 ">
-                                <table class="table ">
+                            <div class="col-md-6 mb-4">
+                                <table class="table table-borderless fs-2" style="color: rgb(252, 255, 189); text-align: center;">
                                     <thead>
                                         <tr>
                                             <td>詳細資訊監測</td>
@@ -155,14 +155,14 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <button onclick="window.open( 'https://www.cwb.gov.tw/V8/C/') " class="btn btn-primary " type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi
+                                                <button onclick="window.open( 'https://www.cwb.gov.tw/V8/C/') " class="btn text-dark" style="background-color: rgb(93, 188, 242);" type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi
             bi-cloud-drizzle " viewBox="0 0 16 16 ">
                                                 <path d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm-3.5 1.5a.5.5 0 0
             1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm6 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 1 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm.747-8.498a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973zM8.5 2a4
             4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 2z "/>
                                               </svg><a href="https://www.cwb.gov.tw/V8/C/ " target="_blank "></a></button>
 
-                                                <button class="btn btn-primary " type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi bi-arrow-right-square " viewBox="0 0 16 16 ">
+                                                <button class="btn text-dark" style="background-color: rgb(93, 188, 242);" type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi bi-arrow-right-square " viewBox="0 0 16 16 ">
                                                 <path fill-rule="evenodd " d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147
             2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z "/>
                                               </svg></button>
@@ -170,14 +170,14 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <button class="btn btn-primary " type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi bi-shield " viewBox="0 0 16 16 ">
+                                                <button class="btn text-dark" style="background-color: rgb(93, 188, 242);" type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi bi-shield " viewBox="0 0 16 16 ">
                                                 <path d="M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615
             0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265
             7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625
             11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z "/>
                                               </svg></button>
 
-                                                <button class="btn btn-primary " type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi bi-telephone " viewBox="0 0 16 16 ">
+                                                <button class="btn text-dark" style="background-color: rgb(93, 188, 242);" type="submit "><svg xmlns="http://www.w3.org/2000/svg " width="125 " height="16 " fill="currentColor " class="bi bi-telephone " viewBox="0 0 16 16 ">
                                                 <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678
             0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315
             1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table " id="accidents " style="background-color:rgba(25, 25, 25, 0.10) "></div>
+                    <div class="table fs-1 text-light px-11" id="accidents" style="background-color:rgba(28, 55, 79, 1)"></div>
                 </div>
             </div>
             <!-- end of .container-->
@@ -254,6 +254,7 @@
     <!-- ===============================================-->
     <!--    JavaScripts-->
     <!-- ===============================================-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="vendors/@popperjs/popper.min.js "></script>
     <script src="vendors/bootstrap/bootstrap.min.js "></script>
     <script src="vendors/is/is.min.js "></script>
@@ -279,7 +280,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
     <script>
         $(function() {
-            var map = L.map('map').setView([25.021749, 121.541591], 8);
+            var map = L.map('map').setView([25.021749, 121.541591], 9);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright ">OpenStreetMap</a> contributors'
@@ -328,8 +329,8 @@
                     var lat = [],
                         lon = []
                     for (i = 0; i < 5; i++) {
-                        lat.push(data.content[i]['PositionLat']);
-                        lon.push(data.content[i]['PositionLon']);
+                        lat.push(data.content[i]['PositionLon']);
+                        lon.push(data.content[i]['PositionLat']);
                     }
                     for (i = 0; i < 5; i++) {
                         var marker = L.marker([lat[i], lon[i]], {
@@ -361,12 +362,12 @@
     </script>
     <script>
         function roadaccident() {
-            var roadnum = document.getElementById("roadnum ");
+            var roadnum = document.getElementById("roadnum");
             var url = "http://35.74.237.16/ceci_api/ioi/?Num=" + roadnum.value;
 
             $.ajax({
                 url: url,
-                type: " GET ",
+                type: "GET",
                 mode: 'no-cors',
                 success: function(data) {
 
@@ -380,11 +381,11 @@
 
                     let row_1 = document.createElement('tr');
                     let heading_1 = document.createElement('th');
-                    heading_1.innerHTML = "時間 ";
+                    heading_1.innerHTML = "時間";
                     let heading_2 = document.createElement('th');
-                    heading_2.innerHTML = "事故類型 ";
+                    heading_2.innerHTML = "事故類型";
                     let heading_3 = document.createElement('th');
-                    heading_3.innerHTML = "備註 ";
+                    heading_3.innerHTML = "備註";
 
                     row_1.appendChild(heading_1);
                     row_1.appendChild(heading_2);
@@ -405,8 +406,6 @@
                         row_2.appendChild(row_2_data_3);
                         tbody.appendChild(row_2);
                     }
-
-
                 }
             })
         }
@@ -443,6 +442,72 @@
             }
         })
     </script>
+    <script>
+        google.load("visualization", "1", {
+            packages: ["corechart"]
+        });
+        google.setOnLoadCallback(drawCharts);
+
+        function drawCharts() {
+            var barData = google.visualization.arrayToDataTable([
+                ['minutes', 'accident', 'rain'],
+                ['20', 20, 10],
+                ['40', 60, 70],
+                ['60', 80, 100]
+            ]);
+            // set bar chart options
+            var barOptions = {
+                focusTarget: 'category',
+                backgroundColor: 'transparent',
+                colors: ['#FCFFBD', '#A6F6D4'],
+                fontName: 'Open Sans',
+                chartArea: {
+                    left: 50,
+                    top: 10,
+                    width: '100%',
+                    height: '70%'
+                },
+                bar: {
+                    groupWidth: '80%'
+                },
+                hAxis: {
+                    textStyle: {
+                        color: "white",
+                        fontSize: 11
+                    }
+                },
+                vAxis: {
+                    minValue: 0,
+                    maxValue: 100,
+                    baselineColor: '#DDD',
+                    gridlines: {
+                        color: '#DDD',
+                        count: 4
+                    },
+                    textStyle: {
+                        color: "white",
+                        fontSize: 11
+                    }
+                },
+                legend: {
+                    position: 'bottom',
+                    textStyle: {
+                        color: "white",
+                        fontSize: 12
+                    }
+                },
+                animation: {
+                    duration: 1200,
+                    easing: 'out',
+                    startup: true
+                }
+            };
+            // draw bar chart twice so it animates
+            var barChart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
+            barChart.draw(barData, barOptions);
+        }
+    </script>
+
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&amp;display=swap " rel="stylesheet ">
 </body>
