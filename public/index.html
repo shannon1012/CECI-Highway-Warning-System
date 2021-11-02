@@ -83,19 +83,19 @@
                 <div class="row min-vh-md-75 mt-8" style="height: 600px; width: 120%;">
                     <div id="map" class="rounded-2" style="border-style: solid; float: left;"></div>
                 </div>
-                <div class="mt-8 card px-lg-3 card-span" style="height: 740px; width: 35%; margin:35px ; background-color:rgba(28, 55, 79, 1);">
-                    <h6 class="mt-1 fs-1 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">更新頻率：每1分鐘<br><button class=" btn btn-sm btn-light fs-1 mt-2" style="color:rgba(28, 55, 79, 1) " onclick=" "><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-counterclockwise mx-1" viewBox="0 0 14 14">
+                <div class="mt-8 card px-lg-3 card-span" style="height: 600px; width: 35%; margin:35px ; background-color:rgba(28, 55, 79, 1);">
+                    <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">更新頻率：每1分鐘<br><button class=" btn btn-sm btn-light fs-1 mt-2" style="color:rgba(28, 55, 79, 1) " onclick=" "><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-counterclockwise mx-1" viewBox="0 0 14 14">
                       <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
                       <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
                     </svg><small>立即更新</small></button></h6>
 
-                    <div class="mt-3 card card-span" style="height: 35%; background-color: rgba(28, 55, 79, 1)">
-                        <h6 class="mt-1 fs-1 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">事故熱點<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1) " onclick=" "><small>完整資訊</small></button></h6>
-                        <div class="table-striped fs-0 text-light" id="predict"></div>
+                    <div class="mt-3 card card-span" style="height: 30%; background-color: rgba(28, 55, 79, 1)">
+                        <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">事故熱點<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1) " onclick=" "><small>完整資訊</small></button></h6>
+                        <div class="table-striped text-light" id="predict" style="font-size: 12px;"></div>
                     </div>
-                    <div class="mt-3 card card-span" style="height: 50%; background-color: rgba(28, 55, 79, 1)">
-                        <h6 class=" mt-1 fs-1 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">交通分析<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1);" onclick=" "><small>完整資訊</small></button></h6>
-                        <div class="my-5" id="bar-chart"></div>
+                    <div class="mt-3 card card-span" style="height: 40%; background-color: rgba(28, 55, 79, 1)">
+                        <h6 class=" mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">交通分析<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1);" onclick=" "><small>完整資訊</small></button></h6>
+                        <div class="my-3" id="bar-chart"></div>
                     </div>
                 </div>
             </div>
@@ -191,7 +191,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="table fs-1 text-light px-11" id="accidents" style="background-color:rgba(28, 55, 79, 1)"></div>
+                    <div class="table text-light px-11" id="accidents" style="background-color:rgba(28, 55, 79, 1); font-size:small;"></div>
                 </div>
             </div>
             <!-- end of .container-->
