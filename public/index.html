@@ -53,7 +53,7 @@
 </head>
 
 
-<body style="background-color: rgba(28, 55, 79, 1);">
+<body style="background-color: rgba(28, 55, 79, 1);" onload="map()">
 
     <!-- ===============================================-->
     <!--    Main Content-->
@@ -69,7 +69,7 @@
                         <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#road" style="color: white; font-weight:bold;">即時路況</a></li>
                         <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#testimonial" style="color: white; font-weight:bold;">即時訊息</a></li>
                         <li class="nav-item px-2" data-anchor="data-anchor"><a class="nav-link" href="#testimonial" style="color: white; font-weight:bold;">資料模型</a></li>
-                        <a class="btn btn-primary border border-0" style="background-color: rgba(28, 55, 79, 1);" href="#!" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+                        <a class="btn btn-primary border border-0" style="background-color: rgba(28, 55, 79, 1);" href="https://www.facebook.com/ceci90216" target="_blank" role="button"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
                           <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
                         </svg></a>
                     </ul>
@@ -84,13 +84,13 @@
                     <div id="map" class="rounded-2" style="border-style: solid; float: left;"></div>
                 </div>
                 <div class="mt-8 card px-lg-3 card-span" style="height: 600px; width: 35%; margin:35px ; background-color:rgba(28, 55, 79, 1);">
-                    <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">更新頻率：每1分鐘<br><button class=" btn btn-sm btn-light fs-1 mt-2" style="color:rgba(28, 55, 79, 1) " onclick=" "><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-counterclockwise mx-1" viewBox="0 0 14 14">
+                    <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">更新頻率：每5分鐘<br><button class="btn btn-sm btn-light fs-1 mt-2" style="color:rgba(28, 55, 79, 1);" onclick="fake();"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-arrow-counterclockwise mx-1" viewBox="0 0 14 14">
                       <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
                       <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
                     </svg><small>立即更新</small></button></h6>
 
                     <div class="mt-3 card card-span" style="height: 30%; background-color: rgba(28, 55, 79, 1)">
-                        <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">事故熱點<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1) " onclick=" "><small>完整資訊</small></button></h6>
+                        <h6 class="mt-1 fs-0 rounded-2 py-2" style="text-align: center; color:white; background-color:rgba(255, 255, 255, 0.4)">事件熱點<button class=" btn btn-sm btn-outline-light fs-1 ml-lg-5" style="color:rgba(28, 55, 79, 1) " onclick=" "><small>完整資訊</small></button></h6>
                         <div class="table-striped text-light" id="predict" style="font-size: 12px;"></div>
                     </div>
                     <div class="mt-3 card card-span" style="height: 40%; background-color: rgba(28, 55, 79, 1)">
@@ -122,7 +122,7 @@
                                 <table class="table table-borderless fs-2" style="color: rgb(252, 255, 189); text-align: center;">
                                     <thead>
                                         <tr>
-                                            <td>路線快速查詢</td>
+                                            <td>事件快速查詢</td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -217,7 +217,7 @@
                     </div>
                     <div class="col-auto mb-3 ">
                         <ul class="list-unstyled ">
-                            <li class="mb-3 "><a class="text-lg-100 fw-light " href="#! ">關於我們</a></li>
+                            <li class="mb-3 "><a class="text-lg-100 fw-light " href="https://www.ceci.org.tw/">關於我們</a></li>
                         </ul>
                     </div>
                     <div class="col-auto mb-3 ">
@@ -232,7 +232,7 @@
                     </div>
                     <div class="col-auto mb-3 ">
                         <ul class="list-unstyled ">
-                            <li class="mb-3 "><a class="text-lg-100 fw-light " href="#! ">聯絡我們</a></li>
+                            <li class="mb-3 "><a class="text-lg-100 fw-light " href="https://www.facebook.com/ceci90216">聯絡我們</a></li>
                         </ul>
                     </div>
                 </div>
@@ -279,86 +279,172 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
     <script>
-        $(function() {
-            var map = L.map('map').setView([25.021749, 121.541591], 9);
+        function map() {
+            $(function() {
+                var map = L.map('map').setView([25.021749, 121.541591], 10);
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright ">OpenStreetMap</a> contributors'
-            }).addTo(map);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright ">OpenStreetMap</a> contributors'
+                }).addTo(map);
 
-            L.geoJSON(FreewayJson, {
-                color: "#9999FF "
-            }).addTo(map);
+                L.geoJSON(FreewayJson, {
+                    color: "#9999FF "
+                }).addTo(map);
 
-            L.geoJSON(points, {
-                pointToLayer: function(feature, latlng) {
-                    roadcode = feature.properties.ROADCODE;
-                    icon = 'HW' + roadcode + '.png';
-                    return new L.Marker(latlng, {
-                        'icon': new L.Icon({
-                            iconUrl: 'style/images/freeway-icon/' + icon,
-                            iconSize: [25, 25]
+                L.geoJSON(points, {
+                    pointToLayer: function(feature, latlng) {
+                        roadcode = feature.properties.ROADCODE;
+                        icon = 'HW' + roadcode + '.png';
+                        return new L.Marker(latlng, {
+                            'icon': new L.Icon({
+                                iconUrl: 'style/images/freeway-icon/' + icon,
+                                iconSize: [25, 25]
+                            })
                         })
-                    })
-                }
-            }).addTo(map);
+                    }
+                }).addTo(map);
 
-            var goldIcon = new L.Icon({
-                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-gold.png',
-                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                iconSize: [25, 41],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-                shadowSize: [41, 41]
+                var goldIcon = new L.Icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-gold.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+
+                var redIcon = new L.Icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+
+                $.ajax({
+                    url: "http://35.74.237.16/ceci_api/pre/",
+                    type: "GET",
+                    mode: 'no-cors',
+                    success: function(data) {
+                        var lat = [],
+                            lon = []
+                        for (i = 0; i < 5; i++) {
+                            lat.push(data.content[i]['PositionLon']);
+                            lon.push(data.content[i]['PositionLat']);
+                        }
+                        for (i = 0; i < 5; i++) {
+                            var marker = L.marker([lat[i], lon[i]], {
+                                icon: goldIcon
+                            }).addTo(map);
+                        }
+                    }
+                })
+
+                $.ajax({
+                    url: "http://35.74.237.16/ceci_api/ioi/?Num=1",
+                    type: "GET",
+                    mode: 'no-cors',
+                    success: function(data) {
+                        var lat = [],
+                            lon = []
+                        for (i = 0; i < data.content.length; i++) {
+                            lat.push(data.content[i]['longitude']);
+                            lon.push(data.content[i]['latitude']);
+                        }
+                        for (i = 0; i < data.content.length; i++) {
+                            var marker = L.marker([lat[i], lon[i]], {
+                                icon: redIcon
+                            }).addTo(map);
+                        }
+                    }
+                })
             });
+        }
+    </script>
+    <script>
+        function fake() {
+            $(function() {
+                var map = L.map('map').setView([25.021749, 121.541591], 9);
 
-            var redIcon = new L.Icon({
-                iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
-                shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                iconSize: [25, 41],
-                iconAnchor: [12, 41],
-                popupAnchor: [1, -34],
-                shadowSize: [41, 41]
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright ">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                L.geoJSON(FreewayJson, {
+                    color: "#9999FF "
+                }).addTo(map);
+
+                L.geoJSON(points, {
+                    pointToLayer: function(feature, latlng) {
+                        roadcode = feature.properties.ROADCODE;
+                        icon = 'HW' + roadcode + '.png';
+                        return new L.Marker(latlng, {
+                            'icon': new L.Icon({
+                                iconUrl: 'style/images/freeway-icon/' + icon,
+                                iconSize: [25, 25]
+                            })
+                        })
+                    }
+                }).addTo(map);
+
+                var goldIcon = new L.Icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-gold.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+
+                var redIcon = new L.Icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
+                });
+
+                $.ajax({
+                    url: "http://35.74.237.16/ceci_api/pre/",
+                    type: "GET",
+                    mode: 'no-cors',
+                    success: function(data) {
+                        var lat = [],
+                            lon = []
+                        for (i = 0; i < 5; i++) {
+                            lat.push(data.content[i]['PositionLon']);
+                            lon.push(data.content[i]['PositionLat']);
+                        }
+                        for (i = 0; i < 5; i++) {
+                            var marker = L.marker([lat[i], lon[i]], {
+                                icon: redIcon
+                            }).addTo(map);
+                        }
+                    }
+                })
+
+                $.ajax({
+                    url: "http://35.74.237.16/ceci_api/ioi/?Num=1",
+                    type: "GET",
+                    mode: 'no-cors',
+                    success: function(data) {
+                        var lat = [],
+                            lon = []
+                        for (i = 0; i < data.content.length; i++) {
+                            lat.push(data.content[i]['longitude']);
+                            lon.push(data.content[i]['latitude']);
+                        }
+                        for (i = 0; i < data.content.length; i++) {
+                            var marker = L.marker([lat[i], lon[i]], {
+                                icon: goldIcon
+                            }).addTo(map);
+                        }
+                    }
+                })
             });
-
-            $.ajax({
-                url: "http://35.74.237.16/ceci_api/pre/",
-                type: "GET",
-                mode: 'no-cors',
-                success: function(data) {
-                    var lat = [],
-                        lon = []
-                    for (i = 0; i < 5; i++) {
-                        lat.push(data.content[i]['PositionLon']);
-                        lon.push(data.content[i]['PositionLat']);
-                    }
-                    for (i = 0; i < 5; i++) {
-                        var marker = L.marker([lat[i], lon[i]], {
-                            icon: goldIcon
-                        }).addTo(map);
-                    }
-                }
-            })
-
-            $.ajax({
-                url: "http://35.74.237.16/ceci_api/ioi/?Num=1",
-                type: "GET",
-                mode: 'no-cors',
-                success: function(data) {
-                    var lat = [],
-                        lon = []
-                    for (i = 0; i < data.content.length; i++) {
-                        lat.push(data.content[i]['longitude']);
-                        lon.push(data.content[i]['latitude']);
-                    }
-                    for (i = 0; i < data.content.length; i++) {
-                        var marker = L.marker([lat[i], lon[i]], {
-                            icon: redIcon
-                        }).addTo(map);
-                    }
-                }
-            })
-        });
+        }
     </script>
     <script>
         function roadaccident() {
@@ -450,10 +536,10 @@
 
         function drawCharts() {
             var barData = google.visualization.arrayToDataTable([
-                ['minutes', 'accident', 'rain'],
-                ['20', 20, 10],
-                ['40', 60, 70],
-                ['60', 80, 100]
+                ['分鐘', '事件率', '降雨率'],
+                ['20', 0.2, 0.1],
+                ['40', 0.6, 0.7],
+                ['60', 0.8, 1]
             ]);
             // set bar chart options
             var barOptions = {
@@ -478,7 +564,7 @@
                 },
                 vAxis: {
                     minValue: 0,
-                    maxValue: 100,
+                    maxValue: 1,
                     baselineColor: '#DDD',
                     gridlines: {
                         color: '#DDD',
